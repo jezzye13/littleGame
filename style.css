@@ -4,4 +4,7 @@ body {
 
 #canvas {
     background-color: #fff;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
