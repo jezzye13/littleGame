@@ -9,7 +9,7 @@ var height = canvas.height;
 var gameState = 0; //0 = title screen //1 = level1
 
 var level1 = new level1("Level-1");
-var titleScreen = new titleScreen("Hello!", "null");
+var titleScreen = new titleScreen("Click on the screen!", "null");
 
 //update
 function update() {

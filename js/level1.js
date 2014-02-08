@@ -3,12 +3,13 @@ var canvas=document.getElementById('canvas');
 var ctx=canvas.getContext('2d');
 
 //vars
-var levelName = "";
+var levelName1 = "";
 
 var width = canvas.width;
 var height = canvas.height;
 
 var click = false;
+var ballSpeed = 10;
 
 var wall = new block(width / 10, 0, 32, 32, "#000"); //player
 var ball = new block(wall.x, 0, 4, 4, "red"); //bulit
@@ -16,11 +17,11 @@ var posMouse = new coord(0, 0); //mouse
 
 //level1
 function level1(level) {
-    levelName = level;
+    levelName1 = level;
 }
 
 function renderL1() {
-    ctx.fillText("@" + levelName, 100, 10);
+    ctx.fillText("@" + levelName1, 100, 10);
     
     //bulit
     ctx.fillStyle=ball.color;
@@ -42,7 +43,7 @@ function updateL1() {
     if (wall.y > height) wall.y = height;
     
     if (click) {
-        ball.x++;
+        ball.x+=ballSpeed;
     } else {
       ball.y = wall.y + (wall.height/2);  
     }
