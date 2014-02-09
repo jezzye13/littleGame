@@ -9,8 +9,15 @@ body {
     display: block;
 }
 font.text1{
-    font-family: Courier;
+    font-family: Courier;  
     color: white;
     position: absolute;
     top: 775px;
+}
+font.underheader{
+    font-family:Courier;
+    color:white;
+    position: absolute;
+    top: 420px;
+    left: 755px;
 }
