@@ -3,7 +3,7 @@ var canvas=document.getElementById('canvas');
 var ctx=canvas.getContext('2d');
 
 //vars
-var levelName1 = "";
+var levelName2 = "";
 
 var width = canvas.width;
 var height = canvas.height;
@@ -13,16 +13,16 @@ var ballSpeed = 10;
 
 var wall = new block(width / 10, 0, 32, 32, "#000"); //player
 var ball = new block(wall.x, 0, 4, 4, "red"); //bulit
-var obj0 = new block(120, 0, 25, 35, "purple") //obj 0
+var obj0 = new block(100, 0, 20, 30, "purple") //obj 0
 var posMouse = new coord(0, 0); //mouse
 
 //level1
-function level1(level) {
-    levelName1 = level;
+function level2(level) {
+    levelName2 = level;
 }
 
-function renderL1() {
-    ctx.fillText("@" + levelName1, 100, 10);
+function renderL2() {
+    ctx.fillText("@" + levelName2, 100, 10);
     
     //bulit
     ctx.fillStyle=ball.color;
@@ -38,7 +38,7 @@ function renderL1() {
     
 }
 
-function updateL1() {
+function updateL2() {
     if (posMouse.y > height) posMouse.y = height - wall.height; 
     if (posMouse.y > height - wall.height) posMouse.y = height - wall.height;
     
@@ -58,11 +58,8 @@ function updateL1() {
         ball.x = wall.x;
     }
     
-    if(collision(ball, obj0)) gameState = 2;
-    
     obj0.y++;
     if(obj0.y > height) obj0.y = 0;
-    
 }
 
 //mouse coords event
