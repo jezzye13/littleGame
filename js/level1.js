@@ -1,20 +1,10 @@
-//canvas
-var canvas=document.getElementById('canvas');
-var ctx=canvas.getContext('2d');
-
 //vars
 var levelName1 = "";
-
-var width = canvas.width;
-var height = canvas.height;
 
 var click = false;
 var ballSpeed = 10;
 
-var wall = new block(width / 10, 0, 32, 32, "#000"); //player
-var ball = new block(wall.x, 0, 4, 4, "red"); //bulit
-var obj0 = new block(120, 0, 25, 35, "purple") //obj 0
-var posMouse = new coord(0, 0); //mouse
+var obj1 = new block(120, 0, 25, 35, "purple") //obj 0
 
 //level1
 function level1(level) {
@@ -22,6 +12,7 @@ function level1(level) {
 }
 
 function renderL1() {
+    document.title = "Little Game | " + levelName1;
     ctx.fillText("@" + levelName1, 100, 10);
     
     //bulit
@@ -33,8 +24,8 @@ function renderL1() {
     ctx.fillRect(wall.x, wall.y, wall.width, wall.height);
     
     //obj0
-    ctx.fillStyle=obj0.color;
-    ctx.fillRect(obj0.x, obj0.y, obj0.width, obj0.height);
+    ctx.fillStyle=obj1.color;
+    ctx.fillRect(obj1.x, obj1.y, obj1.width, obj1.height);
     
 }
 
@@ -58,10 +49,13 @@ function updateL1() {
         ball.x = wall.x;
     }
     
-    if(collision(ball, obj0)) gameState = 2;
+    if(collision(ball, obj1)) {
+        window.alert("Level 1 Achieved! \nPress OK to continue");
+        gameState = 2;
+    }
     
-    obj0.y++;
-    if(obj0.y > height) obj0.y = 0;
+    obj1.y++;
+    if(obj1.y > height) obj1.y = 0;
     
 }
 

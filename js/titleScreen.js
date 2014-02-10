@@ -1,14 +1,7 @@
-//canvas
-var canvas=document.getElementById('canvas');
-var ctx=canvas.getContext('2d');
-
 //vars
 var levelName0 = "";
 
 var clickscreen = false;
-
-var width = canvas.width;
-var height = canvas.height;
 
 //bg
 var bg = "";
@@ -19,6 +12,7 @@ function titleScreen(level, bg) {
     Sprite = new Image();
     Sprite.src = bg;
     levelName0 = level;
+    document.title = "Little Game | Click!";
 }
 
 function renderL0() {

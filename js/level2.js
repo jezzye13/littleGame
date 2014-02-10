@@ -1,20 +1,7 @@
-//canvas
-var canvas=document.getElementById('canvas');
-var ctx=canvas.getContext('2d');
-
 //vars
 var levelName2 = "";
 
-var width = canvas.width;
-var height = canvas.height;
-
-var click = false;
-var ballSpeed = 10;
-
-var wall = new block(width / 10, 0, 32, 32, "#000"); //player
-var ball = new block(wall.x, 0, 4, 4, "red"); //bulit
-var obj0 = new block(100, 0, 20, 30, "purple") //obj 0
-var posMouse = new coord(0, 0); //mouse
+var obj2 = new block(140, 0, 20, 30, "purple") //obj 2
 
 //level1
 function level2(level) {
@@ -22,6 +9,7 @@ function level2(level) {
 }
 
 function renderL2() {
+    document.title = "Little Game | " + levelName2;
     ctx.fillText("@" + levelName2, 100, 10);
     
     //bulit
@@ -32,13 +20,14 @@ function renderL2() {
     ctx.fillStyle=wall.color;
     ctx.fillRect(wall.x, wall.y, wall.width, wall.height);
     
-    //obj0
-    ctx.fillStyle=obj0.color;
-    ctx.fillRect(obj0.x, obj0.y, obj0.width, obj0.height);
+    //obj2
+    ctx.fillStyle=obj2.color;
+    ctx.fillRect(obj2.x, obj2.y, obj2.width, obj2.height);
     
 }
 
 function updateL2() {
+    //do not touch
     if (posMouse.y > height) posMouse.y = height - wall.height; 
     if (posMouse.y > height - wall.height) posMouse.y = height - wall.height;
     
@@ -57,43 +46,8 @@ function updateL2() {
         click = false;
         ball.x = wall.x;
     }
+    //
     
-    obj0.y++;
-    if(obj0.y > height) obj0.y = 0;
-}
-
-//mouse coords event
-function mouse(event) {
-  posMouse.x = event.clientX
-  posMouse.y = event.clientY
-}
-
-//collision return true or false
-function collision(first, second) {
-	return !(first.x > second.x + second.width ||
-		first.x + first.width < second.x ||
-		first.y > second.y + second.height ||
-		first.y + first.height < second.y);
-}
-
-//click
-window.addEventListener("click", getPosition, false);
-
-function getPosition(event) {
-    click = true;
-}
-
-//entity
-function block(x, y, width, height, color) {
-    this.x = x;
-    this.y = y;
-    this.width = width;
-    this.height = height;
-    this.color = color;
-}
-
-//x, y
-function coord(x, y) {
-    this.x = x;
-    this.y = y;
+    obj2.y++;
+    if(obj2.y > height) obj2.y = 0;
 }
