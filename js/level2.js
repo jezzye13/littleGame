@@ -48,6 +48,6 @@ function updateL2() {
     }
     //
     
-    obj2.y++;
-    if(obj2.y > height) obj2.y = 0;
+    bouns(100, 300, 2, obj2);
+    
 }
