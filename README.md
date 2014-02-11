@@ -1,4 +1,4 @@
-littleGame
+littleGame - The Game
 ==========
 
 It`s going to be a little game.
