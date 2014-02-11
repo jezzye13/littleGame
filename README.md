@@ -3,8 +3,8 @@ littleGame
 
 It`s going to be a little game.
 
-JavaScript by `jezzye13`
-Css by `thierry123454`
+JavaScript by `jezzye13`.
+Css by `thierry123454`.
 
 ___
 
