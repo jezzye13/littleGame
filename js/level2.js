@@ -2,6 +2,10 @@
 var levelName2 = "";
 
 var obj2 = new block(140, 0, 20, 30, "purple") //obj 2
+var obj3 = new block(180, 0, 20, 30, "purple") //obj 3
+
+var b1 = false;
+var b2 = false;
 
 //level1
 function level2(level) {
@@ -24,6 +28,9 @@ function renderL2() {
     ctx.fillStyle=obj2.color;
     ctx.fillRect(obj2.x, obj2.y, obj2.width, obj2.height);
     
+    //obj5
+    ctx.fillStyle=obj3.color;
+    ctx.fillRect(obj3.x, obj3.y, obj3.width, obj3.height);
 }
 
 function updateL2() {
@@ -39,7 +46,7 @@ function updateL2() {
     if (click) {
         ball.x+=ballSpeed;
     } else {
-      ball.y = wall.y + (wall.height/2);  
+      ball.y = wall.y + (wall.height/2);
     }
     
     if (ball.x > width + 10) {
@@ -47,7 +54,18 @@ function updateL2() {
         ball.x = wall.x;
     }
     //
+
+    if(b1 && b2) {
+        window.alert("Level " + gameState + " Achieved! \nPress OK to continue");
+        sleep(750);
+        click = false;
+        gameState = 3;
+    }
+
+    if(collision(ball, obj2)) b1 = true;
+    if(collision(ball, obj3)) b2 = true;
     
     bouns(100, 300, 2, obj2);
+    bouns(100, 300, 2.5, obj3);
     
 }

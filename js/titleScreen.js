@@ -21,7 +21,11 @@ function renderL0() {
 }
 
 function updateL0() {
-    if (clickscreen) gameState = 1;
+    if (clickscreen) {
+    	sleep(750);
+    	click = false;
+    	gameState = 1;
+    }
 }
 
 //click
