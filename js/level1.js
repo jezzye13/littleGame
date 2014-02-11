@@ -3,9 +3,11 @@ var levelName1 = "";
 
 var click = false;
 var ballSpeed = 10;
+
+//
 var flag = false;
 
-var obj1 = new block(120, 0, 25, 35, "purple") //obj 0
+var obj1 = new block(120, 200, 25, 35, "purple") //obj 0
 
 //level1
 function level1(level) {
@@ -55,7 +57,7 @@ function updateL1() {
         gameState = 2;
     }
     
-    bouns(300, 100, 2, obj1);
+    bouns(100, 300, 2, obj1);
     
 }
 
@@ -65,16 +67,17 @@ function mouse(event) {
   posMouse.y = event.clientY
 }
 
-//a = max top int; b = max down int
+//a = max top int; b = max down int e.x. bouns(100, 300, 2, obj1)
 function bouns(pointA, pointB, speed, obj) {
-
-   if (obj.y >= pointA) {
-       while(!(obj.y <= pointB)) {
-           obj.y-=speed;
-       }
-   } else {
-       obj.y+=speed; 
-   }
+    
+    if (obj.y <= pointA) flag = true;
+    if (obj.y >= pointB) flag = false;
+    
+    if (flag) {
+        obj.y+=speed;
+    } else {
+        obj.y-=speed;
+    }  
    
 }
 
