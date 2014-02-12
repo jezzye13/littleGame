@@ -42,7 +42,7 @@ function render() {
 
 //when fail
 function tobad(level) {
-    window.alert("To Bad! \n" + level + "\n Press OK to continue");
+    window.alert("To Bad! \n Get to: " + level + "\n Press OK to continue");
     sleep(750);
     clickscreen = false;
     click = false;

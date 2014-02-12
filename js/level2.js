@@ -52,6 +52,7 @@ function updateL2() {
     if (ball.x > width + 10) {
         click = false;
         ball.x = wall.x;
+        tobad(levelName2);
     }
     //
 
