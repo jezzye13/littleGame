@@ -4,8 +4,8 @@ var levelName2 = "";
 var obj2 = new block(140, 0, 20, 30, "purple") //obj 2
 var obj3 = new block(180, 0, 20, 30, "purple") //obj 3
 
-var b1 = false;
-var b2 = false;
+var bo1 = false;
+var bo2 = false;
 
 //level1
 function level2(level) {
@@ -56,15 +56,16 @@ function updateL2() {
     }
     //
 
-    if(b1 && b2) {
+    if(bo1 && bo2) {
         window.alert("Level " + gameState + " Achieved! \nPress OK to continue");
+        ball.x = wall.x;
         sleep(750);
         click = false;
         gameState = 3;
     }
 
-    if(collision(ball, obj2)) b1 = true;
-    if(collision(ball, obj3)) b2 = true;
+    if(collision(ball, obj2)) bo1 = true;
+    if(collision(ball, obj3)) bo2 = true;
     
     bouns(100, 300, 2, obj2);
     bouns(100, 300, 2.5, obj3);

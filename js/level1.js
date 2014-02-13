@@ -107,6 +107,7 @@ function block(x, y, width, height, color) {
     this.width = width;
     this.height = height;
     this.color = color;
+    this.speed = 0;
 }
 
 //x, y
