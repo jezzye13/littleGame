@@ -68,7 +68,7 @@ function updateL3() {
         ball.x = wall.x;
         sleep(750);
         click = false;
-        gameState = 0;
+        gameState = 4;
     }
 
     if(collision(ball, obj4)) bo4 = true;

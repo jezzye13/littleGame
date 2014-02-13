@@ -6,12 +6,13 @@ var ctx=canvas.getContext('2d');
 var width = canvas.width;
 var height = canvas.height;
 
-var gameState = 0; //0 = title screen //1 = level1 //2 = level2 //3 = level3
+var gameState = 4; //0 = title screen //1 = level1 //2 = level2 //3 = level3 //4 = level4
 
+var titleScreen = new titleScreen("Click on the screen!", "null");
 var level1 = new level1("Level 1");
 var level2 = new level2("Level 2");
 var level3 = new level3("Level 3");
-var titleScreen = new titleScreen("Click on the screen!", "null");
+var level4 = new level4("Level 4");
 
 var wall = new block(width / 10, 0, 32, 32, "#000"); //player
 var ball = new block(wall.x, 0, 4, 4, "red"); //bulit
@@ -23,6 +24,7 @@ function update() {
     if(gameState === 1) updateL1();
     if(gameState === 2) updateL2();
     if(gameState === 3) updateL3();
+    if(gameState === 4) updateL4();
 }
 
 //render
@@ -35,6 +37,7 @@ function render() {
     if(gameState === 1) renderL1();
     if(gameState === 2) renderL2();
     if(gameState === 3) renderL3();
+    if(gameState === 4) renderL4();
     
     //reset
     ctx.fillStyle="#000";
