@@ -26,6 +26,8 @@ function updateL0() {
     	click = false;
     	gameState = 1;
     }
+
+    ball.x = wall.x;
 }
 
 //click
