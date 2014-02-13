@@ -26,7 +26,7 @@ function renderL1() {
     ctx.fillStyle=wall.color;
     ctx.fillRect(wall.x, wall.y, wall.width, wall.height);
     
-    //obj0
+    //obj1
     ctx.fillStyle=obj1.color;
     ctx.fillRect(obj1.x, obj1.y, obj1.width, obj1.height);
     
@@ -50,10 +50,14 @@ function updateL1() {
     if (ball.x > width + 10) {
         click = false;
         ball.x = wall.x;
+        tobad(levelName1);
     }
     
     if(collision(ball, obj1)) {
-        window.alert("Level 1 Achieved! \nPress OK to continue");
+        window.alert("Level " + gameState + " Achieved! \nPress OK to continue");
+        sleep(750);
+        click = false;
+        ball.x = wall.x;
         gameState = 2;
     }
     
@@ -103,6 +107,7 @@ function block(x, y, width, height, color) {
     this.width = width;
     this.height = height;
     this.color = color;
+    this.speed = 0;
 }
 
 //x, y
