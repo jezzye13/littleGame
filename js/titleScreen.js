@@ -29,7 +29,7 @@ function updateL0() {
 }
 
 //click
-window.addEventListener("click", getPosition, false);
+canvas.addEventListener("click", getPosition, false);
 
 function getPosition(event) {
     clickscreen = true;
