@@ -4,9 +4,10 @@ var colorbg = "#fff";
 
 var mad = false;
 var shoot = false;
+var bossHit = 20;
 
 var obj7 = new block(267, 200, 40, 60, "purple");
-var obj8 = new block(obj7.x, 0, 25, 4, "yellow");
+var obj8 = new block(obj7.x, 0, 35, 4, "yellow");
 obj8.speed = 3.4;
 
 //level1
@@ -15,7 +16,7 @@ function level4(level) {
 }
 
 function renderL4() {
-    document.title = "Little Game | " + levelName4;
+    document.title = "Little Game | " + levelName4 + " | Boss: " + bossHit + "/20";
     
     //bg
     ctx.fillStyle=colorbg;
@@ -64,6 +65,11 @@ function updateL4() {
         tobad(levelName4);
     }
     //
+
+    if (ball.x > width + 10) {
+        click = false;
+        ball.x = wall.x;
+    }
     
     if(mad) {
        bouns(20, 330, 4.5, obj7);
@@ -83,6 +89,7 @@ function updateL4() {
     }
     
     if(collision(ball, obj7)) {
+        bossHit--;
         mad = true;
         shoot = true;
     }
@@ -91,7 +98,8 @@ function updateL4() {
         tobad(levelName4);
     }
     
-    if(collision(ball, obj7) && mad) {
+    if(bossHit <= 0 && mad) {
+        bossHit = 0;
         window.alert("You WON! \n Get to: End\n Press OK to continue");
         sleep(750);
         clickscreen = false;
