@@ -84,6 +84,7 @@ function updateL4() {
     
     if(collision(ball, obj7)) {
         mad = true;
+        sleep(500);
         shoot = true;
     }
     
