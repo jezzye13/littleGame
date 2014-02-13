@@ -6,7 +6,7 @@ var ctx=canvas.getContext('2d');
 var width = canvas.width;
 var height = canvas.height;
 
-var gameState = 4; //0 = title screen //1 = level1 //2 = level2 //3 = level3 //4 = level4
+var gameState = 0; //0 = title screen //1 = level1 //2 = level2 //3 = level3 //4 = level4
 
 var titleScreen = new titleScreen("Click on the screen!", "null");
 var level1 = new level1("Level 1");
