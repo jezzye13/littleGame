@@ -1,8 +1,8 @@
 //vars
 var levelName2 = "";
 
-var obj2 = new block(140, 0, 20, 30, "purple") //obj 2
-var obj3 = new block(180, 0, 20, 30, "purple") //obj 3
+var obj2 = new block(140, 200, 20, 30, "purple") //obj 2
+var obj3 = new block(180, 200, 20, 30, "purple") //obj 3
 
 var bo1 = false;
 var bo2 = false;
