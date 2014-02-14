@@ -16,7 +16,6 @@ function level4(level) {
 }
 
 function renderL4() {
-    document.title = "Little Game | " + levelName4 + " | Boss: " + bossHit + "/20";
     
     //bg
     ctx.fillStyle=colorbg;
@@ -73,8 +72,10 @@ function updateL4() {
     
     if(mad) {
        bouns(20, 330, 4.5, obj7);
+       document.title = "Little Game | " + levelName4 + " | Boss: " + bossHit + "/20";
     } else {
        bouns(120, 190, 2, obj7);
+       document.title = "Little Game | " + levelName4;
        colorbg = "#fff";
     }
     
