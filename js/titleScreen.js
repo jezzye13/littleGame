@@ -24,6 +24,7 @@ function updateL0() {
     if (clickscreen) {
     	sleep(750);
     	click = false;
+    	mad = false;
     	gameState = 1;
     }
 
