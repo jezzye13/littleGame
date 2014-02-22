@@ -1,23 +1,23 @@
 body {
-    background-color: #3B6EA5;
+    background-image: url(http://kmandla.files.wordpress.com/2010/08/2010-08-04-lv-a8280-win2k-arch.jpg);
+    background-size: 1600px 725px;
 }
 
 #canvas {
     background-color: #fff;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
+    position: absolute;
+    top: 75px;
+    right: 555px;
 }
 font.text1{
     font-family: Courier;  
     color: white;
     position: absolute;
-    top: 775px;
+    top: 0px;
+    right: 0px;
 }
-font.underheader{
-    font-family:Courier;
-    color:white;
+img.form{
     position: absolute;
-    top: 420px;
-    left: 755px;
+    top: 50px;
+    right: 550px;
 }
