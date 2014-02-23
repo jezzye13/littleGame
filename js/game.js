@@ -50,6 +50,7 @@ function tobad(level) {
     clickscreen = false;
     click = false;
     gameState = 0;
+    document.getElementById('bosshitpoints').innerHTML = "";
 }
 
 //spleep function
