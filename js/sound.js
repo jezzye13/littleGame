@@ -7,7 +7,7 @@ win.src = "snd/win.mp3";
 var lose = new Audio();
 lose.src = "snd/lose.mp3";
 
-var bgsound = Audio();
+var bgsound = new Audio();
 bgsound.src = "snd/bg.mp3";
 bgsound.load();
 bgsound.volume = 0.3;
