@@ -43,12 +43,22 @@ function render() {
     ctx.fillStyle="#000";
 }
 
+//click
+canvas.addEventListener("click", getPosition, false);
+
+function getPosition(event) {
+    click = true;
+    shoot.play();
+}
+
 //when fail
 function tobad(level) {
+    lose.play();
     window.alert("To Bad! \n Get to: " + level + "\n Press OK to continue");
     sleep(750);
     clickscreen = false;
     click = false;
+    location.reload();
     gameState = 0;
 }
 

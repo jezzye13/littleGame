@@ -16,7 +16,7 @@ function level1(level) {
 
 function renderL1() {
     document.title = "Little Game | " + levelName1;
-    ctx.fillText("@" + levelName1, 100, 10);
+    ctx.fillText(levelName1, 100, 20);
     
     //bulit
     ctx.fillStyle=ball.color;
@@ -54,6 +54,7 @@ function updateL1() {
     }
     
     if(collision(ball, obj1)) {
+        win.play();
         window.alert("Level " + gameState + " Achieved! \nPress OK to continue");
         sleep(750);
         click = false;
@@ -91,13 +92,6 @@ function collision(first, second) {
 		first.x + first.width < second.x ||
 		first.y > second.y + second.height ||
 		first.y + first.height < second.y);
-}
-
-//click
-canvas.addEventListener("click", getPosition, false);
-
-function getPosition(event) {
-    click = true;
 }
 
 //entity
