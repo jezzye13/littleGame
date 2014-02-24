@@ -27,6 +27,7 @@ function updateL0() {
     	sleep(750);
     	click = false;
         bgsound.play();
+    	mad = false;
     	gameState = 1;
     }
 
