@@ -73,6 +73,7 @@ function updateL4() {
     if(mad) {
        bouns(20, 330, 4.5, obj7);
        document.title = "Little Game | " + levelName4 + " | Boss: " + bossHit + "/20";
+       document.getElementById('bosshitpoints').innerHTML = "Bosshealth:" + bossHit;
     } else {
        bouns(120, 190, 2, obj7);
        document.title = "Little Game | " + levelName4;
@@ -108,6 +109,7 @@ function updateL4() {
         clickscreen = false;
         click = false;
         gameState = 0;
+        document.getElementById('bosshitpoints').innerHTML = "";
     }
     
 }
