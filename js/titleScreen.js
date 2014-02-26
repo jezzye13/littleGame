@@ -16,7 +16,9 @@ function titleScreen(level, bg) {
 
 function renderL0() {
     //ctx.drawImage(Sprite, 0, 0);
-    ctx.fillText("@" + levelName0, width / 2, height / 2);
+    ctx.font = 'bold 20px Calibri';
+    ctx.textAlign = 'center';
+    ctx.fillText(levelName0, width / 2, height / 2);
     document.title = "Little Game | Click!";
 }
 
@@ -24,6 +26,7 @@ function updateL0() {
     if (clickscreen) {
     	sleep(750);
     	click = false;
+        bgsound.play();
     	mad = false;
     	gameState = 1;
     }

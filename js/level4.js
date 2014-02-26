@@ -22,7 +22,7 @@ function renderL4() {
     ctx.fillRect(0, 0, width, height);
     
     ctx.fillStyle="#000";
-    ctx.fillText("@" + levelName4, 100, 10);
+    ctx.fillText(levelName4 + " Boss: " + bossHit + "/20", 100, 20);
     
     //bulit
     ctx.fillStyle=ball.color;
@@ -73,6 +73,7 @@ function updateL4() {
     if(mad) {
        bouns(20, 330, 4.5, obj7);
        document.title = "Little Game | " + levelName4 + " | Boss: " + bossHit + "/20";
+       document.getElementById('bosshitpoints').innerHTML = "Bosshealth:" + bossHit;
     } else {
        bouns(120, 190, 2, obj7);
        document.title = "Little Game | " + levelName4;
@@ -80,6 +81,7 @@ function updateL4() {
     }
     
     if (shoot && mad) {
+        laser.play();
         obj8.x-=obj8.speed;
     } else {
         obj8.y = obj7.y + (obj7.height/2);
@@ -101,11 +103,13 @@ function updateL4() {
     
     if(bossHit <= 0 && mad) {
         bossHit = 0;
+        bossWin.play();
         window.alert("You WON! \n Get to: End\n Press OK to continue");
         sleep(750);
         clickscreen = false;
         click = false;
         gameState = 0;
+        document.getElementById('bosshitpoints').innerHTML = "";
     }
     
 }
@@ -117,5 +121,5 @@ setInterval(function() {
 
 setInterval(function() {
     if(mad) obj7.color = "red";
-    if(mad) colorbg = "black";
+    if(mad) colorbg = "white";
 },150);

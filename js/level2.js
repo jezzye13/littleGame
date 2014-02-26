@@ -14,7 +14,7 @@ function level2(level) {
 
 function renderL2() {
     document.title = "Little Game | " + levelName2;
-    ctx.fillText("@" + levelName2, 100, 10);
+    ctx.fillText(levelName2, 100, 20);
     
     //bulit
     ctx.fillStyle=ball.color;
@@ -57,6 +57,7 @@ function updateL2() {
     //
 
     if(bo1 && bo2) {
+        win.play();
         window.alert("Level " + gameState + " Achieved! \nPress OK to continue");
         ball.x = wall.x;
         sleep(750);
