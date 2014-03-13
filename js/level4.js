@@ -110,6 +110,7 @@ function updateL4() {
         click = false;
         gameState = 0;
         document.getElementById('bosshitpoints').innerHTML = "";
+        location.reload();
     }
     
 }
