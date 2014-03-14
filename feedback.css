@@ -1,6 +1,0 @@
-div.feedback{position:absolute;right:-30px;top:50%;width:100px;visibility:visible;height:40px;background:0;font-family:verdana;line-height:40px;text-align:center;-webkit-border-bottom-left-radius:10px;color:#FFF;text-shadow:0 1px 0 black, 0 2px 0 gray;box-shadow:2px 2px 2px #000;opacity:1;font-weight:700;-webkit-transition-property:height, right, top, line-height, color;-webkit-transition-duration:1s;-webkit-transform:rotate(90deg)}
-div.feedback:active{color:#0FF}
-div.select:hover div.feedback{top:50%;height:45px;right:265px;line-height:45px}
-div.table{position:absolute;right:0;top:30%;width:100px;height:400px;visibility:visible;background:0;-webkit-transition-property:width, opacity;-webkit-transition-duration:1s;opacity:0}
-div.select{width:400px;height:400px;background:#ccc;display:block;visibility:hidden;margin-top:15%;margin-left:75%}
-div.table:hover,div.select:hover div.table{width:300px;opacity:1}
