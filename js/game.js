@@ -54,7 +54,7 @@ function getPosition(event) {
 //when fail
 function tobad(level) {
     lose.play();
-    window.alert("To Bad! \n Get to: " + level + "\n Press OK to continue");
+    window.alert("Too Bad! \n Get to: " + level + "\n Press OK to continue");
     sleep(750);
     clickscreen = false;
     click = false;
